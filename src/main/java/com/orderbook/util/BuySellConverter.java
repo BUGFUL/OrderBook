@@ -1,6 +1,6 @@
-package com.algoorders.orderbook.util;
+package com.orderbook.util;
 
-import com.algoorders.orderbook.model.BuySell;
+import com.orderbook.model.BuySell;
 
 import javax.persistence.AttributeConverter;
 

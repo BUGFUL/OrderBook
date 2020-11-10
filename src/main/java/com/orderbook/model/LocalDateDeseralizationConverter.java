@@ -1,4 +1,4 @@
-package com.algoorders.orderbook.model;
+package com.orderbook.model;
 
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.util.StdConverter;

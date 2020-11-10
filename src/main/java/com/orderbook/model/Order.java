@@ -1,7 +1,6 @@
-package com.algoorders.orderbook.model;
+package com.orderbook.model;
 
-import com.algoorders.orderbook.util.BuySellConverter;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.orderbook.util.BuySellConverter;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
