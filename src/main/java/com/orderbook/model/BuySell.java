@@ -1,4 +1,4 @@
-package com.algoorders.orderbook.model;
+package com.orderbook.model;
 
 import java.util.stream.Stream;
 

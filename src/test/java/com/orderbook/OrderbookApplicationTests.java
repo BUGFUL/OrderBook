@@ -1,4 +1,4 @@
-package com.algoorders.orderbook;
+package com.orderbook;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

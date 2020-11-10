@@ -1,7 +1,7 @@
-package com.algoorders.orderbook.integration;
+package com.orderbook.integration;
 
-import com.algoorders.orderbook.model.BuySell;
-import com.algoorders.orderbook.model.Order;
+import com.orderbook.model.BuySell;
+import com.orderbook.model.Order;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.junit.jupiter.api.*;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -45,7 +44,7 @@ public class RestControllerTest {
     @Test
     public void testDeleteOrder() throws Exception {
         //create new Order
-        Order order = new Order("USD", "EUR", new BigDecimal(10000), 1.4f, BuySell.BUY, "tester", LocalDate.of(2020, 11, 10));
+        com.orderbook.model.Order order = new com.orderbook.model.Order("USD", "EUR", new BigDecimal(10000), 1.4f, BuySell.BUY, "tester", LocalDate.of(2020, 11, 10));
         //serialize Order object to xml string
         String orderAsXml = serialize(order);
         //save new order
@@ -63,7 +62,7 @@ public class RestControllerTest {
         Assertions.assertTrue(order.getBuySell().name().equals(BuySell.BUY.name()));
     }
 
-    private String serialize(Order order) throws JsonProcessingException {
+    private String serialize(com.orderbook.model.Order order) throws JsonProcessingException {
         return xmlMapper.writeValueAsString(order);
     }
 
@@ -77,7 +76,7 @@ public class RestControllerTest {
         }
     }
 
-    private Order deserialize(String xml) throws JsonProcessingException {
+    private com.orderbook.model.Order deserialize(String xml) throws JsonProcessingException {
         return xmlMapper.readValue(xml, Order.class);
     }
 }

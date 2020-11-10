@@ -1,8 +1,8 @@
-package com.algoorders.orderbook.controller;
+package com.orderbook.controller;
 
-import com.algoorders.orderbook.model.Order;
-import com.algoorders.orderbook.model.Orders;
-import com.algoorders.orderbook.service.OrderBookService;
+import com.orderbook.model.Order;
+import com.orderbook.model.Orders;
+import com.orderbook.service.OrderBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

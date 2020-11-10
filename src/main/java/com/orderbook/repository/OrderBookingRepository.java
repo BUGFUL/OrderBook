@@ -1,6 +1,6 @@
-package com.algoorders.orderbook.repository;
+package com.orderbook.repository;
 
-import com.algoorders.orderbook.model.Order;
+import com.orderbook.model.Order;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

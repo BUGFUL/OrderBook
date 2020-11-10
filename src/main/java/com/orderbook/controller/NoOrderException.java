@@ -1,4 +1,4 @@
-package com.algoorders.orderbook.controller;
+package com.orderbook.controller;
 
 public class NoOrderException extends RuntimeException {
 
