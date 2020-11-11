@@ -48,10 +48,12 @@
         </ol>
     </li>
     <li>Check via http://localhost:15672/ that your Rabbit server is up
-        <ol>Create new exchange "jsa.fanout" (see OrderBook application.yml)</ol>
-        <ol>Create new queue "jsa.queue.1" (see OrderDB application.yml)</ol>
-        <ol>Bind exchange and queue (e.g. http://localhost:15672/#/queues/%2F/jsa.queue.1)</ol>    
+        <ol>
+            <li>Create new exchange "jsa.fanout" (see OrderBook application.yml)</li>
+            <li>Create new queue "jsa.queue.1" (see OrderDB application.yml)</li>
+            <li>Bind exchange and queue (e.g. http://localhost:15672/#/queues/%2F/jsa.queue.1)</li>
+        </ol>
     </li>
-    <li>Start OrderBook and then OrderDB locally</li>
-    <li>You test end points via SOAP UI / PostMan</li>
+    <li>Start OrderBook and then OrderDB locally></li>
+    <li>You test end points via SOAP UI / PostMan</li>    
 </ol>
