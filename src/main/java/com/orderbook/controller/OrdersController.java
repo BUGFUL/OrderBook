@@ -1,5 +1,7 @@
 package com.orderbook.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.orderbook.amqp.OrderPublisher;
 import com.orderbook.model.Order;
 import com.orderbook.model.Orders;
 import com.orderbook.service.OrderBookService;
@@ -19,6 +21,9 @@ public class OrdersController {
     @Autowired
     OrderBookService bookService;
 
+    @Autowired
+    OrderPublisher orderPublisher;
+
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public Orders findOrders() {
         return bookService.findAll();
@@ -34,13 +39,12 @@ public class OrdersController {
     }
 
     @PostMapping(path = "/save", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<Order> createUser(@RequestBody Order order) {
-        Order orderSaved = bookService.save(order);
-        return new ResponseEntity<>(orderSaved, HttpStatus.CREATED);
+    public ResponseEntity<Order> createUser(@RequestBody Order order) throws JsonProcessingException {
+        orderPublisher.publishOrder(order);
+        return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
 
-    //TODO - Implement update Order (with update its version)
-    //@PutMapping
+    //TODO - Implement update Order (with update its version: version.next())
 
     @DeleteMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<Void> deleteOrder(@PathVariable("id") Long id) {

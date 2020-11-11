@@ -40,6 +40,6 @@ public class OrderBookService implements IOrderBookService {
 
     @Override
     public boolean exists(Order order) {
-        return findById(order.getId()).isEmpty();
+        return findById(Long.valueOf(order.getId().toString())).isEmpty();
     }
 }
