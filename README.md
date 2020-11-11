@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/BUGFUL/OrderBook.svg?branch=master)](https://travis-ci.com/github/BUGFUL/OrderBook)
 
 
-![Main Architecture](orderbook/src/main/resources/screenshots/main.png)
+![Architecture](https://github.com/BUGFUL/OrderBook/blob/feature/readme/src/main/resources/screenshots/main.png)
 
 <h4>How it works</h4>
 <ol>
