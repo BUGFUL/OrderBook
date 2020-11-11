@@ -1,4 +1,4 @@
-package com.algoorders.orderbook.model;
+package com.orderbook.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -20,5 +20,4 @@ public class Orders implements Serializable {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
-
 }

@@ -1,11 +1,13 @@
-package com.algoorders.orderbook.model;
+package com.orderbook.model;
 
 import java.util.stream.Stream;
 
-public enum BuySell {
-    BUY, SELL;
+public enum Status {
+    OPEN,
+    AMEND,
+    CANCELLED;
 
-    public static BuySell getByName(String name) {
+    public static Status getByName(String name) {
         return Stream.of(values())
                 .filter(e -> e.name().equalsIgnoreCase(name))
                 .findFirst()

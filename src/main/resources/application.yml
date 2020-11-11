@@ -7,14 +7,26 @@ spring:
   output:
     ansi:
       enabled: always
-
-jpa:
-  database: h2
-  hibernate:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database: h2
+    hibernate:
       dialect: org.hibernate.dialect.H2Dialect
-  ddl-auto: create #automatic schema creation (enabled)
+    ddl-auto: create #automatic schema creation (enabled)
+    open-in-view: false
 
-#logging:
-#  level:
-#    org:
-#      springframework: ALL
+jsa:
+  rabbitmq:
+    exchange: jsa.fanout

@@ -1,7 +1,7 @@
-package com.algoorders.orderbook.service;
+package com.orderbook.service;
 
-import com.algoorders.orderbook.model.Order;
-import com.algoorders.orderbook.model.Orders;
+import com.orderbook.model.Order;
+import com.orderbook.model.Orders;
 
 import java.util.Optional;
 

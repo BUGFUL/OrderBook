@@ -1,8 +1,8 @@
-package com.algoorders.orderbook.service;
+package com.orderbook.service;
 
-import com.algoorders.orderbook.model.Order;
-import com.algoorders.orderbook.model.Orders;
-import com.algoorders.orderbook.repository.OrderBookingRepository;
+import com.orderbook.model.Order;
+import com.orderbook.model.Orders;
+import com.orderbook.repository.OrderBookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +40,6 @@ public class OrderBookService implements IOrderBookService {
 
     @Override
     public boolean exists(Order order) {
-        return findById(order.getId()).isEmpty();
+        return findById(Long.valueOf(order.getId().toString())).isEmpty();
     }
 }
